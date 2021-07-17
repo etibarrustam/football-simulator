@@ -15,10 +15,10 @@ class TeamEquality
     /**
      * @var Team
      */
-    public $team;
+    public Team $team;
 
     /**
-     * @var bool
+     * @var bool|int
      */
     public $winner = false;
 

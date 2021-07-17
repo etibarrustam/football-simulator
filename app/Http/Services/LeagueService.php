@@ -19,27 +19,27 @@ class LeagueService
     /**
      * @var TeamRepository
      */
-    private $teamRepository;
+    private TeamRepository $teamRepository;
 
     /**
      * @var MatchRepository
      */
-    private $matchRepository;
+    private MatchRepository $matchRepository;
 
     /**
      * @var MatchTeamRepository
      */
-    private $matchTeamRepository;
+    private MatchTeamRepository $matchTeamRepository;
 
     /**
      * @var TeamArchive
      */
-    private $teamArchive;
+    private TeamArchive $teamArchive;
 
     /**
      * @var WeekRepository
      */
-    private $weekRepository;
+    private WeekRepository $weekRepository;
 
     /**
      * LeagueService constructor.

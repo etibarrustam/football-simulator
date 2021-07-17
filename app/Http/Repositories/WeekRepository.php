@@ -27,10 +27,10 @@ class WeekRepository extends AbstractRepository
     public function all(array $params = [], array $relations = [], array $selects = ['*'])
     {
         if (array_key_exists('position_to', $params)) {
-            $this->model = $this->model::where('position', '>=', $params['position_to']);
+            $this->model = $this->model::where('position', '<=', $params['position_to']);
         }
         if (array_key_exists('position_from', $params)) {
-            $this->model = $this->model::where('position', '<=', $params['position_from']);
+            $this->model = $this->model::where('position', '>=', $params['position_from']);
         }
         if (array_key_exists('position', $params)) {
             $this->model = $this->model::where('position', $params['position']);
