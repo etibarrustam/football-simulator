@@ -67,4 +67,12 @@ interface RepositoryInterface
      * @return mixed
      */
     public function all(array $params = [], array $relations = [], array $selects = ['*']);
+
+    /**
+     * Get rows count.
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function count(array $params = []);
 }

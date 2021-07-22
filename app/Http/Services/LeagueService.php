@@ -41,6 +41,8 @@ class LeagueService
      */
     private WeekRepository $weekRepository;
 
+    private $teamMatchesService;
+
     /**
      * LeagueService constructor.
      *
@@ -55,13 +57,15 @@ class LeagueService
         TeamArchive $teamArchive,
         MatchRepository $matchRepository,
         MatchTeamRepository $matchTeamRepository,
-        WeekRepository $weekRepository
+        WeekRepository $weekRepository,
+        TeamMatchesService $teamMatchesService
     ) {
         $this->teamRepository = $teamRepository;
         $this->matchRepository = $matchRepository;
         $this->matchTeamRepository = $matchTeamRepository;
         $this->teamArchive = $teamArchive;
         $this->weekRepository = $weekRepository;
+        $this->teamMatchesService = $teamMatchesService;
     }
 
     /**
@@ -72,6 +76,7 @@ class LeagueService
      */
     public function weekResult(int $week)
     {
+//        return $this->teamMatchesService->sortByGame();
         $data = collect([]);
         $weeks = $this->weekRepository->all(['position_to' => $week]);
         $teams = $this->teamRepository->getByWeek($weeks->pluck('id')->toArray());

@@ -14,6 +14,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Match extends Model
 {
+    /**
+     * @var bool
+     */
     public $timestamps = false;
 
     /**
@@ -21,6 +24,9 @@ class Match extends Model
      */
     protected $fillable = ['week_id'];
 
+    /**
+     * @var string[]
+     */
     protected $appends = ['winner_id'];
 
     /**
