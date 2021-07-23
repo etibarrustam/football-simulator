@@ -24,7 +24,7 @@ class Team extends Model
      */
     public function matches()
     {
-        return $this->belongsToMany(Match::class);
+        return $this->belongsToMany(Match::class)->with(['teams']);
     }
 
     /**

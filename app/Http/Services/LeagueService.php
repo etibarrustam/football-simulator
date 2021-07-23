@@ -51,6 +51,7 @@ class LeagueService
      * @param MatchRepository $matchRepository
      * @param MatchTeamRepository $matchTeamRepository
      * @param WeekRepository $weekRepository
+     * @param TeamMatchesService $teamMatchesService
      */
     public function __construct(
         TeamRepository $teamRepository,
@@ -76,7 +77,6 @@ class LeagueService
      */
     public function weekResult(int $week)
     {
-//        return $this->teamMatchesService->sortByGame();
         $data = collect([]);
         $weeks = $this->weekRepository->all(['position_to' => $week]);
         $teams = $this->teamRepository->getByWeek($weeks->pluck('id')->toArray());
