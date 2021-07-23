@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\MatchMaxRule;
+use App\Rules\WeekMaxRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
@@ -20,7 +22,9 @@ class LeagueRequest extends FormRequest
     public function rules()
     {
         return [
-            'week' => 'required|numeric|min:1'
+            'week' => [
+                'required','numeric','min:1', new WeekMaxRule(), new MatchMaxRule()
+            ]
         ];
     }
 }

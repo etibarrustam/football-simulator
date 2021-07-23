@@ -11,6 +11,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class MatchTeam extends Model
 {
+    /**
+     * @var string
+     */
     protected $table = 'match_team';
     /**
      * @var bool

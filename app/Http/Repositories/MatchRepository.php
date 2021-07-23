@@ -49,7 +49,7 @@ class MatchRepository extends AbstractRepository
             ->whereHas('week', function($w) use ($week) {
                 $w->where('position', $week);
             })
-            ->with(['teams'])
+            ->with(['teams', 'week'])
             ->get();
     }
 }

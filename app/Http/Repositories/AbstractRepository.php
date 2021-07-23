@@ -95,4 +95,12 @@ abstract class AbstractRepository implements RepositoryInterface
 
         return $collection;
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function count(array $params = [])
+    {
+        return $this->model->where($params)->count();
+    }
 }

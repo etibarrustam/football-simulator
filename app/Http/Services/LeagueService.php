@@ -41,6 +41,8 @@ class LeagueService
      */
     private WeekRepository $weekRepository;
 
+    private $teamMatchesService;
+
     /**
      * LeagueService constructor.
      *
@@ -49,19 +51,22 @@ class LeagueService
      * @param MatchRepository $matchRepository
      * @param MatchTeamRepository $matchTeamRepository
      * @param WeekRepository $weekRepository
+     * @param TeamMatchesService $teamMatchesService
      */
     public function __construct(
         TeamRepository $teamRepository,
         TeamArchive $teamArchive,
         MatchRepository $matchRepository,
         MatchTeamRepository $matchTeamRepository,
-        WeekRepository $weekRepository
+        WeekRepository $weekRepository,
+        TeamMatchesService $teamMatchesService
     ) {
         $this->teamRepository = $teamRepository;
         $this->matchRepository = $matchRepository;
         $this->matchTeamRepository = $matchTeamRepository;
         $this->teamArchive = $teamArchive;
         $this->weekRepository = $weekRepository;
+        $this->teamMatchesService = $teamMatchesService;
     }
 
     /**
