@@ -5,6 +5,7 @@ namespace App\Http\Services;
 use App\Http\Repositories\MatchRepository;
 use App\Http\Repositories\MatchTeamRepository;
 use App\Http\Repositories\TeamRepository;
+use App\Http\Services\MatchGenerators\MatchGenerator;
 
 class TeamMatchesService
 {
@@ -25,10 +26,10 @@ class TeamMatchesService
 
     public function sortByGame()
     {
-        $teams = $this->teamRepository->all();
+        $games = [];
+//        $teams = $this->teamRepository->all([], ['matches']);
+        $matches = $this->matchTeamRepository->all()->toArray();
 
-        $matches = $this->matchTeamRepository->aa();
-
-        dd($matches);
+        $games = new MatchGenerator($matches);
     }
 }

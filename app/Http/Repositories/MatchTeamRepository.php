@@ -21,20 +21,4 @@ class MatchTeamRepository extends AbstractRepository
     {
         parent::__construct($model);
     }
-
-//    public function aa()
-//    {
-//        $result = $this->all();
-//        $teams = [];
-//
-//        if ($result) {
-//            $teams = $result->groupBy('team_id');
-//
-//            foreach ($teams as $teamMatches) {
-//
-//            }
-//        }
-//
-//        return $matches;
-//    }
 }

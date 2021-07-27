@@ -163,6 +163,8 @@ class LeagueService
      */
     public function play($week)
     {
+//        return $this->teamMatchesService->sortByGame();
+
         $lastWeek = 1;
         $atHome = 1;
         $matches = $this->matchRepository->all();
